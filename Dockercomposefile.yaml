@@ -1,0 +1,13 @@
+version: '3'
+services:
+  my_python_app_container:
+    image: my_python_app:1.0
+    ports:
+      - 8080:8080
+    volumes:
+      - my_python_app_volume:/home/my_python_app
+    environment:
+      - APP_HOST=0.0.0.0
+volumes:
+  my_python_app_volume:
+    driver: local
